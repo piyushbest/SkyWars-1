@@ -145,6 +145,14 @@ class SkyWarsCommand extends Command implements PluginIdentifiableCommand {
                     "§7- or §ldone §r§7to leave setup mode");
                 $this->plugin->setters[$sender->getName()] = $this->plugin->arenas[$args[1]];
                 break;
+                case "join":
+                if(count($this->plugin->arenas) === 0) {
+                    $sender->sendMessage("§6> No arenas found!");
+                    break;
+                }
+                $arena = $this->plugin->arenas[array_rand($this->plugin->arenas)];
+                $arena->joinToArena($sender);
+                break;
             case "arenas":
                 if(!$sender->hasPermission("sw.cmd.arenas")) {
                     $sender->sendMessage("§cYou have not permissions to use this command!");
