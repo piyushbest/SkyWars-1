@@ -144,7 +144,7 @@ class Arena implements Listener {
         $player->setHealth(20);
         $player->setFood(20);
 
-        $this->broadcastMessage("§a> Player {$player->getName()} joined! §7[".count($this->players)."/{$this->data["slots"]}]");
+        $this->broadcastMessage("§a> Player {$player->getName()} §ehas §cBeen §4jointed ! §b[".count($this->players)."/{$this->data["slots"]}]");
     }
 
     /**
